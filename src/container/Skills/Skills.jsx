@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
+import {Tooltip} from 'react-tooltip';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+// import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
@@ -11,16 +11,16 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
-    const skillsQuery = '*[_type == "skills"]';
+    // const query = '*[_type == "experiences"]';
+    // const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(query).then((data) => {
-      setExperiences(data);
-    });
+    // client.fetch(query).then((data) => {
+    //   setExperiences(data);
+    // });
 
-    client.fetch(skillsQuery).then((data) => {
-      setSkills(data);
-    });
+    // client.fetch(skillsQuery).then((data) => {
+    //   setSkills(data);
+    // });
   }, []);
 
   return (
@@ -40,7 +40,7 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+                <img src={'https://www.gme.net.au/app/plugins/wp-media-folder/assets/images/default.png'} alt={skill.name} />
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
@@ -69,14 +69,14 @@ const Skills = () => {
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                    <ReactTooltip
+                    <Tooltip
                       id={work.name}
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
                     >
                       {work.desc}
-                    </ReactTooltip>
+                    </Tooltip>
                   </>
                 ))}
               </motion.div>
