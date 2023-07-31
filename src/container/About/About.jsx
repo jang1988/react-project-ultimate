@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
+import { images } from '../../constants';
 import './About.scss';
 // import { urlFor, client } from '../../client';
 
 const About = () => {
-  const [abouts, setAbouts] = useState([]);
+  
+  const abouts = [
+    {title: 'Web Development', description: 'I am a good web developer', imgUrl: images.about01},
+    {title: 'Frontend Development', description: 'I am a good web developer', imgUrl: images.about02},
+    {title: 'Backend Development', description: 'I am a good web developer', imgUrl: images.about03},
+    {title: 'MERN Stack', description: 'I am a good web developer', imgUrl: images.about04},
+  ]
 
   useEffect(() => {
     // const query = '*[_type == "abouts"]';
@@ -18,7 +25,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className="head-text">I Know that <span>Good Design</span> <br />means  <span>Good Business</span></h2>
+      <h2 className="head-text">I Know that <span>Good Apps</span> <br />means  <span>Good Business</span></h2>
 
       <div className="app__profiles">
         {abouts.map((about, index) => (
@@ -29,7 +36,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={'https://www.gme.net.au/app/plugins/wp-media-folder/assets/images/default.png'} alt={about.title} />
+            <img src={about.imgUrl} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>{about.title}</h2>
             <p className="p-text" style={{ marginTop: 10 }}>{about.description}</p>
           </motion.div>
