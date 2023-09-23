@@ -15,10 +15,13 @@
 .app__profile-item {
   width: 190px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   margin: 2rem;
+
+  p {
+    text-align: center;
+  }
 
   img {
     width: 100%;

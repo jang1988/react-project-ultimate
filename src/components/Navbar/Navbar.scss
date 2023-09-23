@@ -17,17 +17,24 @@
 
 .app__navbar-logo {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
+
+  p {
+    font-size: 27px;
+  }
 
   img {
     width: 50px;
     height: 50px;
+    border-radius: 10px;
 
     @media screen and (min-width: 2000px) {
       width: 180px;
       height: 40px;
     }
+
   }
 }
 
