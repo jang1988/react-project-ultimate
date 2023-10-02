@@ -57,8 +57,8 @@ const Skills = () => {
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
-                  <React.Fragment key={work.company}>
+                {experience.works.map((work, i) => (
+                  <React.Fragment key={work.company + i}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}

@@ -95,6 +95,22 @@
   }
 }
 
+.app__work-mobile {
+  display: none;
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    gap: 70px;
+    position: absolute;
+    top: -40px;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+    color: black;
+  }
+}
+
 .app__work-hover {
   position: absolute;
   top: 0;
